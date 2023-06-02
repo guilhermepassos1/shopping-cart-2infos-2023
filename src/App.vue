@@ -2,7 +2,7 @@
 
 import { livros } from '@/_data/livros.js'
 import {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
-
+import Cardlivro from '@/components/Cardlivro.vue'
 
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -13,19 +13,7 @@ function formatarPreco(preco) {
   <h1>Minha livraria</h1>
   <div class="container-geral">
     <div class="listagem-livros">
-      <div class="card-livro" v-for="livro in livros" :key="livro.id">
-        <div class="card-info-livro">
-          <div class="wrap-livro">
-            <img :src="livro.img" alt="Capa do livro" class="capa-livro" />
-          </div>
-          <p class="titulo-livro">{{ livro.title }}</p>
-          <p class="autor-livro">{{ livro.author }}</p>
-          <p class="preco-livro">{{ formatarPreco(livro.price) }}</p>
-        </div>
-        <div class="card-buttons-livros">
-          <button @click="adicionarAoCarrinho(livro)">Adicionar ao carrinho</button>
-        </div>
-      </div>
+     <Cardlivro v-for="livro in livros" v-bind:key="livro.id" v-bind:livro="livro" />
     </div>
     <div class="carrinho">
       <h2>Meu carrinho</h2>
