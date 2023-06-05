@@ -1,21 +1,13 @@
 <script setup>
-
-import { livros } from '@/_data/livros.js'
-import {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
-import Cardlivro from '@/components/Cardlivro.vue'
-
-function formatarPreco(preco) {
-  return 'R$ ' + preco.toFixed(2).replace('.', ',')
-}
+import ListagemLivros from './components/ListagemLivros.vue'
+import MeuCarrinho from './components/MeuCarrinho.vue';
 </script>
 
 <template>
   <h1>Minha livraria</h1>
   <div class="container-geral">
-    <div class="listagem-livros">
-     <Cardlivro v-for="livro in livros" :key="livro.id" :livro="livro" @adicionarAoCarrinho="adicionarAoCarrinho" />
-    </div>
-   
+    <ListagemLivros />
+    <MeuCarrinho/>
   </div>
 </template>
 
@@ -80,10 +72,6 @@ function formatarPreco(preco) {
 
 .carrinho {
   /* min-width: 20%; */
-}
-.listagem-livros {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 

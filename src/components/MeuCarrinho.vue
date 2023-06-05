@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { livros } from '@/_data/livros.js'
+import {carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
+import Cardlivro from '@/components/Cardlivro.vue'
+
+function formatarPreco(preco) {
+    return 'R$ ' + preco.toFixed(2).replace('.', ',')
+  }
+  </script>
 <template>
     <div class="carrinho">
         <h2>Meu carrinho</h2>
