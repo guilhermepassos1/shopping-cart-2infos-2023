@@ -1,8 +1,7 @@
 <script setup>
-import { livros } from '@/_data/livros.js'
-import {carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
-import Cardlivro from '@/components/Cardlivro.vue'
 
+import {carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
+import MButton from '@/components/MButton.vue';
 function formatarPreco(preco) {
     return 'R$ ' + preco.toFixed(2).replace('.', ',')
   }
@@ -36,6 +35,7 @@ function formatarPreco(preco) {
                     </div>
                 </div>
             </div>
+            <MButton/>
             <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
         </div>
     </div>

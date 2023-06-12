@@ -11,6 +11,7 @@ import Cardlivro from './Cardlivro.vue';
     @adicionarAoCarrinho="adicionarAoCarrinho" />
    </div>
  </template>
+ 
 <style scoped>
 .listagem-livros {
   display: flex;
