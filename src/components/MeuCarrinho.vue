@@ -35,7 +35,8 @@ function formatarPreco(preco) {
                     </div>
                 </div>
             </div>
-            <MButton/>
+            <MButton text="Limpar Carrinho"/>
+            
             <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
         </div>
     </div>
