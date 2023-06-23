@@ -5,14 +5,11 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['adicionarAoCarrinho'])
-
-function adicionarAoCarrinho(livro) {
-    emit('adicionarAoCarrinho', livro)
-}
-
 function formatarPreco(preco) {
     return 'R$ ' + preco.toFixed(2).replace('.', ',')
 }
+import CartPlus from 'vue-material-design-icons/CartPlus.vue'
+import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
 </script>
 
 <template>
@@ -26,9 +23,12 @@ function formatarPreco(preco) {
             <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
         </div>
         <div class="card-buttons-livros">
-            <button @click="adicionarAoCarrinho(props.livro)">Adicionar ao carrinho</button>
+            <m-button class="sucesso" @click="emit('adicionarAoCarrinho', props.livro)">
+    <cart-plus />
+</m-button>
+<m-button class="info"> <share-variant /> </m-button>
         </div>
-        <MButton/>
+     
     </div>
 </template>
 
@@ -67,4 +67,5 @@ function formatarPreco(preco) {
     font-weight: bold;
     margin-bottom: 5px;
 }
+
 </style>
